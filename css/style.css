@@ -9,12 +9,23 @@
     --footer-alpha-colot: rgba(255, 255, 255, 0.6);
     --portfolio-button-color: #F5F4FA;
     --active-button-blue-color: #188CE8;
+    --icon-inactive-grey-color: #AFB1B8;
+    --footer-alpha-icons-color:rgba(255, 255, 255, 0.103);
 }
 
 body {
     font-family: 'Roboto', sans-serif;
     color: var(--main-text-color);
     background-color: rgb(255, 255, 255);
+}
+
+.icon {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    stroke-width: 0;
+    stroke: currentColor;
+    fill: currentColor;
 }
 
 /* =======================*/
@@ -65,6 +76,7 @@ body {
     line-height: 1.2;
     letter-spacing: 0.02em;
     color: var(--gray-text-color);
+    display: flex;
 }
 
 .contact:hover,
@@ -124,13 +136,23 @@ body {
     margin-left: 93px;
 }
 
-.header-contact-flexbox {}
+.contact-icons{
+    height: 16px;
+    width: 16px;
+    margin-right: 10px;
+}
 
 /* =======================*/
 
 .header-section {
     background-color: var(--dark-section-color);
     padding: 200px 0;
+    background-image: linear-gradient(to right, rgba(0,0,0,.4),rgba(0,0, 0, .4)),url(../img/page1/herobackground.jpg);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+    max-width: 1600px;
+    margin: 0 auto;
 }
 
 .main-header {
@@ -190,6 +212,28 @@ body {
 
 .feature-part {
     width: 270px;
+}
+.feature-part::before{
+    display: block;
+    content: " ";
+    height: 120px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: var(--light-section-color);
+    margin-bottom: 30px;
+}
+
+.antenna-image::before{
+    background-image: url(../img/page1/icons/featuressecanthen-min.svg);
+}
+.clock-image::before {
+    background-image: url(../img/page1/icons/featuressecclock-min.svg);
+}
+.computer-image::before {
+    background-image: url(../img/page1/icons/featuresseccomputersvg-min.svg);
+}
+.astronaut-image::before {
+    background-image: url(../img/page1/icons/featuressecastronaut-min.svg);
 }
 
 .feature-header {
@@ -262,7 +306,58 @@ body {
     display: flex;
     gap: 30px;
 }
+.team-icons-container{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 16px;
+}
+.social-links{
+    color: var(--icon-inactive-grey-color);
+    width: 44px;
+    height: 44px;
+    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.social-links:hover,
+.social-links:focus{
+    color: var(--total-white);
+    background-color: var(--logo-blue-color);
+    border-radius: 100%;
+}
+.social-link-icons{
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
+/* =======================*/
+.regular-customers-list{
+    display: flex;
+    justify-content: space-between;
+}
+.regular-customers-icons{
+    width: 106px;
+    height: 60px;
+}
 
+.regular-customers-list-links{
+    border: 1px solid var(--icon-inactive-grey-color);
+    border-radius: 5px;
+    display: inline-block;
+    width: 170px;
+    height: 92px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--icon-inactive-grey-color);
+}
+.regular-customers-list-links:hover,
+.regular-customers-list-links:focus{
+    color: var(--logo-blue-color);
+    border-color: var(--logo-blue-color);
+}
 /* =======================*/
 .footer-section {
     background: var(--dark-section-color);
@@ -306,7 +401,49 @@ body {
 .white-alpha:focus {
     color: var(--logo-blue-color);
 }
+.social-link-header{
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.2;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+.footer-team-icons-container{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 16px;
+}
+.footer-social-links{
+    color: var(--total-white);
+    width: 44px;
+    height: 44px;
+    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--footer-alpha-icons-color);
+    border-radius: 100%;
+}
+.footer-flex-container{
+    display: flex;
+    gap: 70px;
+    align-items: baseline;
+}
 
+
+.footer-social-links:hover,
+.footer-social-links:focus {
+    color: var(--total-white);
+    background-color: var(--logo-blue-color);
+}
+
+.footer-social-link-icons {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
 /* =========porfolio page==============*/
 
 .button-navigation {
@@ -355,7 +492,13 @@ body {
     display: block;
     width: 370px;
 }
+.project:hover {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+    border: none;
+}/**/
 
+
+/**/
 .project-header {
     font-size: 18px;
     line-height: 36px;
